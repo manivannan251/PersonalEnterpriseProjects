@@ -28,5 +28,11 @@ int sum = add(4,5);
 %>
 <br>
 The value of sum of 2 numbers is: <%=sum %>
+<%
+for(int m=0;m<5;m++) {
+%>
+<br>
+The value of i using for loop is <%=m%>
+<%} %>
 </body>
 </html>

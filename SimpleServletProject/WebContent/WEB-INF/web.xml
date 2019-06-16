@@ -21,4 +21,16 @@
   <servlet-name>xmlServlet</servlet-name>
   <url-pattern>/xmlServletPattern</url-pattern>
   </servlet-mapping>
+  <servlet>
+  <servlet-name>InitJSp</servlet-name>
+  <jsp-file>/initparam.jsp</jsp-file>
+  <init-param>
+  <param-name>defuser</param-name>
+  <param-value>def user name</param-value>
+  </init-param>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>InitJSp</servlet-name>
+  <url-pattern>/initpage.jsp</url-pattern>
+  </servlet-mapping>
 </web-app>

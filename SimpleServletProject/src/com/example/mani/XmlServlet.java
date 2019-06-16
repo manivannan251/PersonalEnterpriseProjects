@@ -2,6 +2,7 @@ package com.example.mani;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Calendar;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServlet;
@@ -26,6 +27,7 @@ public class XmlServlet extends HttpServlet {
 			context.setAttribute("name", userName);
 		}
 		PrintWriter out = resp.getWriter();
+		Calendar.getAvailableCalendarTypes();
 		out.println("The username from request is "+userName);
 		out.println("The username from session is "+ (String)session.getAttribute("name"));
 		out.println("The username from context is "+ (String)context.getAttribute("name"));
