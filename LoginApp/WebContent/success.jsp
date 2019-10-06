@@ -9,9 +9,13 @@
 </head>
 <body>
 <h3>Welcome</h3>
-<%
+<%-- <%
 	UserDetails user = (UserDetails) request.getAttribute("user");
-%>
-<%=user.getUserName() %>
+%> --%>
+<jsp:useBean id="user" class="com.example.mani.dto.UserDetails" scope="request">
+	<jsp:setProperty property="userName" name="user" value="New User"/>
+</jsp:useBean>
+<%-- <%=user.getUserName() %> --%>
+Hello <jsp:getProperty property="userName" name="user"/>
 </body>
 </html>

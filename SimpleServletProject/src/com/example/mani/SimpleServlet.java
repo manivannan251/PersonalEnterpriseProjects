@@ -25,8 +25,14 @@ public class SimpleServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		System.out.println("Hello from doGet");
+		String uname = request.getParameter("name");
+		System.out.println("The remote port is "+request.getRemotePort());
+		System.out.println("The server port is "+request.getServerPort());
+		System.out.println("The local port is "+request.getLocalPort());
 		PrintWriter out = response.getWriter();
-		out.println("<h3>Hello "+getServletConfig().getInitParameter("defuser")+"</h3>");
+		if(uname==null)
+			uname=getServletConfig().getInitParameter("defuser");
+		out.println("<h3>Hello "+uname+"</h3>");
 	}
 
 }
