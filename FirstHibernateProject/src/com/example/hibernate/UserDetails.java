@@ -27,7 +27,7 @@ public class UserDetails {
 	@Lob
 	private String address;
 	
-	@Transient
+	//@Transient
 	private String description;
 
 	public int getId() {
@@ -69,6 +69,16 @@ public class UserDetails {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
+	@Override
+	public String toString() {
+		return "UserDetails [id=" + id + ", name=" + name + ", joiningDate=" + joiningDate + ", address=" + address
+				+ ", description=" + description + "]";
+	}
+	
+	
+	
+	
 	
 	
 }

@@ -7,23 +7,19 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<!-- Configure properties files -->
-	<context:property-placeholder location="classpath:sport.properties"/>
+	
 	
     <!-- Define your beans here -->
     
     <!-- define the dependency -->
     
- 	<!-- <bean id="myCoach"
- 		class="com.example.springdemo.TrackCoach">	 		
- 	</bean> -->
+ 	<bean id="myCoach"
+ 		class="com.example.springdemo.TrackCoach">	
+ 		<constructor-arg ref="fortuneservice"></constructor-arg> 		
+ 	</bean>
 
     
-    <bean id="myCoach"
-        class="com.example.springdemo.BaseballCoach">
-        <constructor-arg ref="fortuneservice">
-        </constructor-arg>      
-    </bean>
+    
     
     <!-- <bean id="myCoach"
         class="com.example.springdemo.BowlingCoach">         
@@ -32,14 +28,7 @@
     <bean id="fortuneservice" class="com.example.springdemo.HappyFortuneService">
     </bean>
     
-    <bean id="myCricketCoach" class="com.example.springdemo.CricketCoach">
-    <property name="fourtuneService" ref="fortuneservice"></property>
-    <!-- <property name="team" value="Chennai Super Kings"></property>
-    <property name="emailAddress" value="csk.org"></property> -->
-    <property name="team" value="${cricket.team}"></property>
-    <property name="emailAddress" value="${cricket.email}"></property>
-    </bean>
-   
+    
    
 
 </beans>

@@ -4,6 +4,10 @@ public class CricketCoach implements Coach {
 	
 	private FourtuneService fourtuneService;
 	
+	private String team;
+	
+	private String emailAddress;
+	
 	public CricketCoach() {
 		System.out.println("Inside no args constructor");
 	}
@@ -23,5 +27,25 @@ public class CricketCoach implements Coach {
 		// TODO Auto-generated method stub
 		return fourtuneService.getFortune();
 	}
+
+	public String getTeam() {
+		return team;
+	}
+
+	public void setTeam(String team) {
+		System.out.println("Inside the set Team Method");
+		this.team = team;
+	}
+
+	public String getEmailAddress() {
+		return emailAddress;
+	}
+
+	public void setEmailAddress(String emailAddress) {
+		System.out.println("Inside the set email Address Method");
+		this.emailAddress = emailAddress;
+	}
+	
+	
 
 }

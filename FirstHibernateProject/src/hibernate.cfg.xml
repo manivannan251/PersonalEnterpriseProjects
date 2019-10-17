@@ -32,11 +32,18 @@
         <property name="show_sql">true</property>
 
         <!-- Drop and re-create the database schema on startup -->
-        <property name="hbm2ddl.auto">create</property>
+        <property name="hbm2ddl.auto">update</property>
 
         <!-- <mapping resource="org/hibernate/tutorial/hbm/Event.hbm.xml"/> -->
         
-        <mapping class="com.example.hibernate.UserDetails"/>
+        <!-- <mapping class="com.example.hibernate.UserDetails"/> -->
+        <mapping class="com.example.hibernate.object.types.Messages"/>
+        <!-- <mapping class="com.example.hibernate.UserDetailsId"/>
+        <mapping class="com.example.hibernate.embedded.examples.UserWithAddress"/>
+        <mapping class="com.example.hibernate.collection.examples.UserDetailsCollection"/>
+         <mapping class="com.example.hibernate.one_to_one_mapping.Customer"/>
+         <mapping class="com.example.hibernate.one_to_one_mapping.Account"/>
+        <mapping class="com.examples.initialization_types_examples.Customers"/> -->
 
     </session-factory>
 
