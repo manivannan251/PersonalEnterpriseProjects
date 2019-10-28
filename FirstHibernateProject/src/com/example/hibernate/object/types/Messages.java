@@ -3,13 +3,16 @@ package com.example.hibernate.object.types;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedNativeQuery;
 import javax.persistence.NamedQuery;
 
+import org.hibernate.annotations.NaturalIdCache;
 import org.hibernate.annotations.SelectBeforeUpdate;
 
 @Entity
 //@org.hibernate.annotations.Entity(selectBeforeUpdate = true)
 @NamedQuery(name = "Messages.id",query = "from Messages where id>?0")
+@NamedNativeQuery(name="Messages.name",query = "select * from messages where message like ?0",resultClass = Messages.class)
 @SelectBeforeUpdate(value = true)
 public class Messages {
 	

@@ -17,13 +17,16 @@ public class HibernateTest {
 		save(createUserDetails(3, "Seth","Stomp","CN"));
 		save(createUserDetails(4, "Brown","PowerBomb","MS"));
 		save(createUserDetails(5, "Cena","F5","BN"));
+		save(createUserDetails(6, "Orton","RKO","NV"));
+		save(createUserDetails(7, "HHH","Pedigree","TX"));
+		save(createUserDetails(8, "Roman","Spear","CA"));
 		UserDetails seth = getUserdetails(3);
 		System.out.println(seth);
 		updateDesc(3, "Pedigree");
 		seth = getUserdetails(3);
 		System.out.println("After changing finishing move");
 		System.out.println(seth);
-		deleteUser(2);		
+		//deleteUser(2);		
 		
 		
 	}
