@@ -10,6 +10,7 @@ import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import com.example.rest.services.Messanger.database.DatabaseClass;
+import com.example.rest.services.Messanger.exception.DataNotFoundException;
 import com.example.rest.services.Messanger.model.Message;
 
 public class MessageService {
@@ -36,8 +37,18 @@ public class MessageService {
 		}).collect(Collectors.toList());
 	}
 	
+	public List<Message> getAllMessagesPaginated(int start,int size) {
+		List<Message> paginatedMsg = new ArrayList(messages.values());
+		if(start+size>messages.size())
+			return new ArrayList<Message>();
+		return paginatedMsg.subList(start, start+size);
+	}
+	
 	public Message getMessage(long id) {
-		return messages.get(id);
+		Message message = messages.get(id);;
+		if(message==null) 
+			throw new DataNotFoundException("The message with message id "+id+" not found ");
+		return message;
 	}
 	
 	public Message addMessage(Message message) {
