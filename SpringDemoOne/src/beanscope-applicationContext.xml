@@ -14,7 +14,7 @@
     <!-- define the dependency -->
     
  	<bean id="myCoach"
- 		class="com.example.springdemo.TrackCoach">	
+ 		class="com.example.springdemo.BaseballCoach" init-method="myInitmethod" destroy-method="myDestroyMethod">	
  		<constructor-arg ref="fortuneservice"></constructor-arg> 		
  	</bean>
 

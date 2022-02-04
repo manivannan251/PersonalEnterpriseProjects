@@ -16,4 +16,12 @@ public class BaseballCoach implements Coach {
 	public String getDailyFortune() {
 		return fs.getFortune();
 	}
+	
+	public void myInitmethod() {
+		System.out.println("Inside Baseball Coach init method");
+	}
+	
+	public void myDestroyMethod() {
+		System.out.println("Inside Baseball Coach destroy method");
+	}
 }

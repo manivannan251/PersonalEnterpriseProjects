@@ -16,6 +16,7 @@ public class ObjectTypesDemo {
 		mes.setMessage("Hello Again");
 		ses.getTransaction().commit();
 		mes.setMessage("After commit");
+		ses.getTransaction().commit();
 		ses.close();
 
 	}
